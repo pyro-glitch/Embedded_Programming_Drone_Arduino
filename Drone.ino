@@ -96,7 +96,7 @@ void loop() {
   delay(10);
 }
 
-//SETUP
+//SETUP FUNCTIONS
 void initalize_imu(){
   if (!mpu.begin()) {
     Serial.println("Failed to find MPU6050 chip");
@@ -140,7 +140,7 @@ void callibrate(){
   GYRO_Z_OFFSET = -gyro_z/readings;
 }
 
-//LOOP
+//LOOP FUNCTIONS
 bool imu_read(){
   //GET VALUES
   mpu.getEvent(&a, &g, &temp);
@@ -246,6 +246,7 @@ void rc_read_values(){
   throttle  = pulseIn(recvPin3,HIGH);
   yaw       = pulseIn(recvPin4,HIGH);
   
+  // Needs to be calibrated according to the reciver
   roll    = mapValue(roll,1110.0, 1840.0,-25.0,25.0);
   pitch   = mapValue(pitch,1205.0, 1840.0,-25.0,25.0);
   throttle= mapValue(throttle,1180.0, 1800.0,1000.0,2000.0);
