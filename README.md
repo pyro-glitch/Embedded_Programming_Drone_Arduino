@@ -4,3 +4,7 @@ This project is made using an Arduino as a flight controller. In assistance to A
 
 # Flow Chart
 ![alt text](https://github.com/pyro-glitch/Embedded_Programming_Drone_Arduino/blob/main/Flowchart.png?raw=true)
+
+
+### Reference 
+https://youtu.be/CHSYgLfhwUo?feature=shared
